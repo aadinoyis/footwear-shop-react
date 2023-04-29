@@ -1,0 +1,208 @@
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  margin: 4em 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 4.1em;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+nav ul li a::before {
+  position: absolute;
+  content: '';
+  bottom: -1rem;
+  width: 0;
+  height: 2px;
+  border-bottom: 2px solid rgb(205, 205, 205); 
+  transition: width 300ms ease-in;
+}
+
+nav ul li a:hover::before {
+  width: 45%;
+}
+
+nav ul li a.active::before{
+  position: absolute;
+  content: '';
+  bottom: -1rem;
+  width: 45%;
+  height: 2px;
+  border-bottom: 2px solid black;
+}
+/* 
+Hero section customization */
+
+main {
+  display: flex;
+  gap: 8em;
+  margin-top: 7em;
+  animation: growBig 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+.left-col {
+  width: 45%;
+}
+
+.left-col h1 {
+  font-size: 5.2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+
+.left-col > p {
+  font-size: 1.6rem;
+  margin-bottom: 4rem;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 2em;
+}
+
+.cta-btns .cta-btns-main {
+  background-color: #f1e2d1;
+  color: #000;
+  font-weight: bold;
+  padding: 1em 2em;
+  border-radius: .8rem;
+  font-size: 1.4rem;
+}
+
+.cta-btns .cta-btns-main:hover {
+  background-color: #ddccb9;
+}
+
+.cta-btns .cta-btns-aside {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.4rem;
+}
+
+.cta-btns .cta-btns-aside:hover img {
+  transform: translateX(2em);
+}
+
+.cta-btns .cta-btns-aside img {
+  transition: transform 300ms;
+  width: 20px;
+}
+
+aside {
+  display: flex;
+  gap: 3em;
+  border: 1px solid black;
+  border-radius: .8rem;
+  padding: 4em;
+  margin-top: 7rem;
+  position: relative;
+}
+
+aside::before {
+  position: absolute;
+  content: '';
+  width: 125px;
+  height: 125px;
+  top: -2.5em;
+  left: -2.5em;
+  background-image: url('../public/confetti.svg');
+  background-size: contain;
+}
+
+aside .customers {
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+aside .content {
+  font-size: 1.4rem;
+}
+
+/* Organizing our right column listed products */
+
+.right-col {
+  flex: 1;
+  display: grid;
+  gap: 2.3em;
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas: 
+    'first second'
+    'first third';
+}
+
+.right-col .card {
+  background: grey;
+  padding: 1.1em;
+  display: flex;
+  align-items: flex-end;
+  border-radius: .8em;
+  background-size: 130%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: background-size 300ms;
+}
+
+.right-col .card-1 {
+  grid-area: first;
+  background-image: url('./assets/images/3.jpg');
+}
+.right-col .card-2 {
+  background-image: url('./assets/images/5.jpg');
+}
+.right-col .card-3 {
+  background-image: url('./assets/images/1.jpg');
+}
+
+.right-col .card:hover {
+  background-size: 150%;
+}
+
+.right-col .card:hover .details {
+  transform: translateY(-1em);
+}
+
+.card .details {
+  background: #fff;
+  padding: 2em;
+  border-radius: .5em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 300ms;
+}
+
+.card .title h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.card .title p {
+  font-size: 1.2rem;
+}
+
+.card .price {
+  font-size: 1.6rem;
+}
+
